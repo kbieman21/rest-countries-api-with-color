@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./src/script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Countries</title>
+  </head>
+  <body>
+    <header>
+      <div>Where in the world?</div>
+      <div>
+        <i class="fa-solid fa-moon"></i>
+        Dark Mode
+      </div>
+    </header>
+    <main>
+      <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          id="search-id"
+          name="search"
+          placeholder="Search for a country"
+        />
+
+        <!--Filter by region dropdown-->
+        <select>
+          <option value="Filter by Region">Filter by Region</option>
+          <option value="Africal">Africa</option>
+          <option value="Americas">Americas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+        </select>
+      </div>
+
+      <div id="card-template" style="display: none">
+        <a href="#" class="card-clicable">
+        <img src="" alt="" />
+        <h2 class="country-name"></h2>
+        <ul>
+          <li class="population"></li>
+          <li class="region"></li>
+          <li class="capital"></li>
+        </ul>
+        </a>
+      </div>
+
+      <div id="countries"></div>
+    </main>
+  </body>
+</html>
