@@ -3,35 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="../details.js" defer></script>
+
     <title>Document</title>
   </head>
   <body>
     <header>
-      <div>where in the world</div>
+      <h1>where in the world</h1>
       <div><i class="fa-solid fa-moon"> Dark Mode</i></div>
     </header>
     <main>
       <div>
+        <a href="/../index.html">
         <i class="fa-solid fa-arrow-left"></i>
         <button class="back-to-main">Back</button>
-        <div id="detail-card-template" style="display: none">
+          </a>
+        <template id="detail-card-template" style="display: none">
           <img src="" alt="" />
-          <h2 class="detail-country-name"></h2>
+          <h2 ></h2>
           <ul>
-            <li class="detail-native-name"></li>
-            <li class="detail-population"></li>
-            <li class="detail-region"></li>
-            <li class="detail-subregion"></li>
-            <li class="detail-capital"></li>
-            <li class="detail-domain"></li>
-            <li class="detail-currencies"></li>
-            <li class="detai-languages"></li>
+            <li id="detail-native-name"></li>
+            <li id="detail-population"></li>
+            <li id="detail-region"></li>
+            <li id="detail-subregion"></li>
+            <li id="detail-capital"></li>
+            <li id="detail-domain"></li>
+            <li id="detail-currencies"></li>
+            <li id="detai-languages"></li>
+            
           </ul>
-        </div>
-        <div class="border-countries">
-          <button></button>
-          <button></button>
-          <button></button>
+          Border Countries:
+          <a href="">
+             <div id="border-countries"></div>
+          </a>
+         
+        </template>
+        <div id="detail-countries"></div>
+        
+         
         </div>
       </div>
     </main>
