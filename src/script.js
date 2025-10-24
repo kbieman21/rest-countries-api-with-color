@@ -23,9 +23,9 @@ function renderCountries(countries) {
     cardTemplateClone.querySelector("img").alt = country.name.common;
     //add country name to the h2
     cardTemplateClone.querySelector("h2").textContent = country.name.common;
-    cardTemplateClone.querySelector("#population").textContent = `Population: ${country.population.toLocaleString()}`;
-    cardTemplateClone.querySelector("#region").textContent = `Region: ${country.region}`;
-    cardTemplateClone.querySelector("#capital").textContent = `Capital: ${country.capital?.[0] || "N/A"}`;
+    cardTemplateClone.querySelector(".population").textContent = `Population: ${country.population.toLocaleString()}`;
+    cardTemplateClone.querySelector(".region").textContent = `Region: ${country.region}`;
+    cardTemplateClone.querySelector(".capital").textContent = `Capital: ${country.capital?.[0] || "N/A"}`;
     countriesDiv.appendChild(cardTemplateClone);
   });
 }
@@ -46,7 +46,7 @@ function filterCountries() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const res = await fetch(
-    "https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital",
+    "https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital++fake",
   );
 
   if (!res.ok) {
