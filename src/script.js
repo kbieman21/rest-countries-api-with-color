@@ -23,9 +23,9 @@ function renderCountries(countries) {
     cardTemplateClone.querySelector("img").alt = country.name.common;
     //add country name to the h2
     cardTemplateClone.querySelector("h2").textContent = country.name.common;
-    cardTemplateClone.querySelector(".population").textContent = `Population: ${country.population.toLocaleString()}`;
-    cardTemplateClone.querySelector(".region").textContent = `Region: ${country.region}`;
-    cardTemplateClone.querySelector(".capital").textContent = `Capital: ${country.capital?.[0] || "N/A"}`;
+    cardTemplateClone.querySelector(".population").innerHTML = `<strong>Population:</strong> ${country.population.toLocaleString()}`;
+    cardTemplateClone.querySelector(".region").innerHTML = `<strong>Region:</strong> ${country.region}`;
+    cardTemplateClone.querySelector(".capital").innerHTML = `<strong>Capital:</strong> ${country.capital?.[0] || "N/A"}`;
     countriesDiv.appendChild(cardTemplateClone);
   });
 }

@@ -29,27 +29,26 @@ document.addEventListener("DOMContentLoaded", async () => {
       country.flags.svg || country.flags.png;
     cardTemplateClone.querySelector("img").alt = `${country.name.common} flag`;
     cardTemplateClone.querySelector("h2").textContent = country.name.common;
-    cardTemplateClone.querySelector("#detail-native-name").textContent =
-      Object.values(country.name.nativeName)[0].common;
-    cardTemplateClone.querySelector(
-      "#detail-domain"
-    ).textContent = `Domain: ${country.tld}`;
+    cardTemplateClone.querySelector("#detail-native-name").innerHTML  = `<strong>Native Name:</strong> ${Object.values(country.name.nativeName)[0].common}`;
     cardTemplateClone.querySelector(
       "#detail-population"
-    ).textContent = `Population: ${country.population.toLocaleString()}`;
+    ).innerHTML = `<strong>Population: </strong>${country.population.toLocaleString()}`;    
     cardTemplateClone.querySelector(
       "#detail-region"
-    ).textContent = `Region: ${country.region}`;
+    ).innerHTML = `<strong>Region: </strong>${country.region}`;
     cardTemplateClone.querySelector(
       "#detail-capital"
-    ).textContent = `Capital: ${country.capital?.[0] || "N/A"}`;
+    ).innerHTML = `<strong>Capital:</strong> ${country.capital?.[0] || "N/A"}`;
+     cardTemplateClone.querySelector(
+      "#detail-domain"
+    ).innerHTML = `<strong>Top Level Domain:</strong> ${country.tld}`;
     cardTemplateClone.querySelector(
       "#detail-currencies"
-    ).textContent = `Currency: ${country.currencies?.[0] || "N/A"}`;
-    // cardTemplateClone.querySelector('#detail-languages').textContent = `Language: ${country.languges}`;
+    ).innerHTML = `<strong>Currencies: </strong>${country.currencies?.[0] || "N/A"}`;
+    cardTemplateClone.querySelector('#detail-languages').innerHTML = `<strong>Languages: </strong>${country.languges}`;
     cardTemplateClone.querySelector(
       "#detail-subregion"
-    ).textContent = `Sub Region: ${country.subregion}`;
+    ).innerHTML = `<strong>Sub Region:</strong> ${country.subregion}`;
 
     const borderCountries = cardTemplateClone.querySelector(
       "#detail-border-countries"
