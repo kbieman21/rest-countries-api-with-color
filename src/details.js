@@ -29,23 +29,40 @@ document.addEventListener("DOMContentLoaded", async () => {
       country.flags.svg || country.flags.png;
     cardTemplateClone.querySelector("img").alt = `${country.name.common} flag`;
     cardTemplateClone.querySelector("h2").textContent = country.name.common;
-    cardTemplateClone.querySelector("#detail-native-name").innerHTML  = `<strong>Native Name:</strong> ${Object.values(country.name.nativeName)[0].common}`;
+    cardTemplateClone.querySelector(
+      "#detail-native-name"
+    ).innerHTML = `<strong>Native Name:</strong> ${
+      Object.values(country.name.nativeName)[0].common
+    }`;
     cardTemplateClone.querySelector(
       "#detail-population"
-    ).innerHTML = `<strong>Population: </strong>${country.population.toLocaleString()}`;    
+    ).innerHTML = `<strong>Population: </strong>${country.population.toLocaleString()}`;
     cardTemplateClone.querySelector(
       "#detail-region"
     ).innerHTML = `<strong>Region: </strong>${country.region}`;
     cardTemplateClone.querySelector(
       "#detail-capital"
     ).innerHTML = `<strong>Capital:</strong> ${country.capital?.[0] || "N/A"}`;
-     cardTemplateClone.querySelector(
+    cardTemplateClone.querySelector(
       "#detail-domain"
     ).innerHTML = `<strong>Top Level Domain:</strong> ${country.tld}`;
+    // cardTemplateClone.querySelector(
+    //   "#detail-currencies"
+    // ).innerHTML = `<strong>Currencies: </strong>${country.currencies?.[0] || "N/A"}`;
+    const currenciesObject = Object.values(country.currencies)[0];
+    if (currenciesObject && currenciesObject.name) {
+      cardTemplateClone.querySelector(
+        "#detail-currencies"
+      ).innerHTML = `<strong>Currencies:</strong> ${currenciesObject.name}`;
+    }
+    // cardTemplateClone.querySelector(
+    //   "#detail-languages"
+    // ).innerHTML = `<strong>Languages: </strong>${country.languges}`;
+    const languages = Object.values(country.languages);
+    const languagesReadable = languages.join(", ");
     cardTemplateClone.querySelector(
-      "#detail-currencies"
-    ).innerHTML = `<strong>Currencies: </strong>${country.currencies?.[0] || "N/A"}`;
-    cardTemplateClone.querySelector('#detail-languages').innerHTML = `<strong>Languages: </strong>${country.languges}`;
+      "#detail-languages"
+    ).innerHTML = `<strong>Languages: </strong> ${languagesReadable}`;
     cardTemplateClone.querySelector(
       "#detail-subregion"
     ).innerHTML = `<strong>Sub Region:</strong> ${country.subregion}`;

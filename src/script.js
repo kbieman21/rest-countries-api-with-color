@@ -46,7 +46,7 @@ function filterCountries() {
 
 document.addEventListener("DOMContentLoaded", async () => {
   const res = await fetch(
-    "https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital++fake",
+    "https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital",
   );
 
   if (!res.ok) {
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const data = await res.json();
    allCountries = data;
    renderCountries(allCountries);
-  console.log(allCountries);
+  console.log(allCountries[0]);
 
 
 });
